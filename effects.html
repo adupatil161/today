@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery effects</title>
+    <script type="text/javascript" src="jquery 3.7.0.js"></script>
+</head>
+<body>
+    <button id="btn1">click</button>
+    <button id="btn2">click</button>
+    <div id="colored-div" style="background-color:brown;height:100px;width:100px;">
+    </div>
+</body>
+<script>
+    $("#btn1").click(function(){
+        $("#colored-div").fadeOut(1000);
+    });
+    $("#btn2").click(function(){
+        $("#colored-div").fadeIn(2000);
+            });
+</script>
+</html>
