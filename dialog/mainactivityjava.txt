@@ -1,0 +1,34 @@
+package com.example.dialog;
+
+import android.content.DialogInterface;
+import android.os.Bundle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Do you want to exit?")
+                .setCancelable(false)
+                .setTitle("EXIT")
+                .setNegativeButton("No", (dialog, id) -> {
+                    // If the user clicks "No," cancel the dialog.
+                    dialog.cancel();
+                })
+                .setPositiveButton("Yes", (dialog, id) -> {
+                    // If the user clicks "Yes," finish the activity.
+                    finish();
+                });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+}
