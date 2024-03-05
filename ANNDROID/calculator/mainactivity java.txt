@@ -1,0 +1,72 @@
+package com.example.calculator_adi;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+private EditText n1;
+private EditText n2;
+private Button a;
+private Button b;
+private Button c;
+private Button d;
+private TextView t;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        n1=(EditText) findViewById(R.id.et1);
+        n2=(EditText) findViewById(R.id.et2);
+        a=(Button) findViewById(R.id.add);
+        b=(Button)findViewById(R.id.sub);
+        c=(Button)findViewById(R.id.mul);
+        d=(Button)findViewById(R.id.div);
+
+        t=(TextView) findViewById(R.id.tv);
+        a.setOnClickListener(new View.OnClickListener() {
+                                 @Override
+                                 public void onClick(View v) {
+                                     int number1 = Integer.parseInt(n1.getText().toString());
+
+                                     int number2 = Integer.parseInt(n2.getText().toString());
+                                     int sum = number1 + number2;
+                                     t.setText("answer:" + String.valueOf(sum));
+                                 }
+                             });
+             b.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int number1 = Integer.parseInt(n1.getText().toString());
+
+                    int number2 = Integer.parseInt(n2.getText().toString());
+                    int sum = number1 - number2;
+                    t.setText("answer:" + String.valueOf(sum));
+                }
+        });
+        c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int number1 = Integer.parseInt(n1.getText().toString());
+
+                int number2 = Integer.parseInt(n2.getText().toString());
+                int sum = number1 * number2;
+                t.setText("answer:" + String.valueOf(sum));
+            }
+        });
+        d.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int number1 =Integer.parseInt(n1.getText().toString());
+                int number2 =Integer.parseInt(n2.getText().toString());
+                int sum =number1/number2;
+                t.setText("answer is:"+String.valueOf(sum));
+            }
+        });
+
+    }
+}
